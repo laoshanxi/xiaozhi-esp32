@@ -30,7 +30,9 @@ jobs:
       - id: list
         name: Get all variant list
         run: |
-          echo "all_variants=$(python scripts/release.py --list-boards --json)" >> $GITHUB_OUTPUT
+          # echo "all_variants=$(python scripts/release.py --list-boards --json)" >> $GITHUB_OUTPUT
+          all_variants='[{"board": "jiuchuan-s3", "name": "jiuchuan-s3"}]'
+          echo "all_variants=$all_variants" >> $GITHUB_OUTPUT
 
       - id: select
         name: Select variants based on changes
